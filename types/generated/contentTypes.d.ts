@@ -394,6 +394,7 @@ export interface ApiAuthorssinAuthorssin extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::postssin.postssin'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -434,6 +435,7 @@ export interface ApiCategoriessinCategoriessin
 export interface ApiPostssinPostssin extends Struct.CollectionTypeSchema {
   collectionName: 'postsplu';
   info: {
+    description: '';
     displayName: 'posts';
     pluralName: 'postsplu';
     singularName: 'postssin';
@@ -444,7 +446,7 @@ export interface ApiPostssinPostssin extends Struct.CollectionTypeSchema {
   attributes: {
     author: Schema.Attribute.Relation<
       'manyToOne',
-      'api::categoriessin.categoriessin'
+      'api::authorssin.authorssin'
     >;
     category: Schema.Attribute.Relation<
       'manyToOne',

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "postssin",
     "pluralName": "postsplu",
-    "displayName": "posts"
+    "displayName": "posts",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,11 +16,12 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "content": {
       "type": "blocks",
@@ -33,7 +35,7 @@
     "author": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::categoriessin.categoriessin",
+      "target": "api::authorssin.authorssin",
       "inversedBy": "posts"
     },
     "category": {

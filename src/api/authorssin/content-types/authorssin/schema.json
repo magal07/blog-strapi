@@ -13,6 +13,12 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::postssin.postssin",
+      "mappedBy": "author"
     }
   }
 }
