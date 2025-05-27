@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoriesplu",
+  "info": {
+    "singularName": "categoriessin",
+    "pluralName": "categoriesplu",
+    "displayName": "categories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::postssin.postssin",
+      "mappedBy": "category"
+    }
+  }
+}
