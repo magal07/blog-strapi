@@ -453,7 +453,7 @@ export interface ApiPostssinPostssin extends Struct.CollectionTypeSchema {
       'api::categoriessin.categoriessin'
     >;
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    cover: Schema.Attribute.Media<'images'>;
+    cover: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
