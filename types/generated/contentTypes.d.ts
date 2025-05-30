@@ -394,7 +394,7 @@ export interface ApiAuthorssinAuthorssin extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    posts: Schema.Attribute.Relation<'oneToMany', 'api::postssin.postssin'>;
+    post: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -424,7 +424,7 @@ export interface ApiCategoriessinCategoriessin
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    posts: Schema.Attribute.Relation<'oneToMany', 'api::postssin.postssin'>;
+    post: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -432,13 +432,13 @@ export interface ApiCategoriessinCategoriessin
   };
 }
 
-export interface ApiPostssinPostssin extends Struct.CollectionTypeSchema {
-  collectionName: 'postsplu';
+export interface ApiPostPost extends Struct.CollectionTypeSchema {
+  collectionName: 'posts';
   info: {
     description: '';
-    displayName: 'posts';
-    pluralName: 'postsplu';
-    singularName: 'postssin';
+    displayName: 'post';
+    pluralName: 'posts';
+    singularName: 'post';
   };
   options: {
     draftAndPublish: true;
@@ -458,10 +458,7 @@ export interface ApiPostssinPostssin extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::postssin.postssin'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
@@ -983,7 +980,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::authorssin.authorssin': ApiAuthorssinAuthorssin;
       'api::categoriessin.categoriessin': ApiCategoriessinCategoriessin;
-      'api::postssin.postssin': ApiPostssinPostssin;
+      'api::post.post': ApiPostPost;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

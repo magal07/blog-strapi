@@ -14,10 +14,10 @@
       "type": "string",
       "required": true
     },
-    "posts": {
+    "post": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::postssin.postssin",
+      "target": "api::post.post",
       "mappedBy": "author"
     }
   }

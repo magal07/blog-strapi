@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "postsplu",
+  "collectionName": "posts",
   "info": {
-    "singularName": "postssin",
-    "pluralName": "postsplu",
-    "displayName": "posts",
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post",
     "description": ""
   },
   "options": {
@@ -29,20 +29,20 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
-    },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::authorssin.authorssin",
-      "inversedBy": "posts"
+      "required": true,
+      "targetField": "title"
     },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::categoriessin.categoriessin",
-      "inversedBy": "posts"
+      "inversedBy": "post"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::authorssin.authorssin",
+      "inversedBy": "post"
     }
   }
 }

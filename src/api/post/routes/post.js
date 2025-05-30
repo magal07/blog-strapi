@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * postssin router
+ * post router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::postssin.postssin');
+module.exports = createCoreRouter('api::post.post');
